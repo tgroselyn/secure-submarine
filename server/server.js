@@ -12,6 +12,7 @@ require('dotenv').config();
 // Route includes
 const userRouter = require('./routes/user.router');
 const secretsRouter = require('./routes/secrets.router');
+const allUsersRouter = require('./routes/allusers.router');
 
 
 // Body parser middleware
@@ -28,6 +29,7 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/secrets', secretsRouter);
+app.use('/api/allusers', allUsersRouter);
 
 // Serve static files
 app.use(express.static('build'));
